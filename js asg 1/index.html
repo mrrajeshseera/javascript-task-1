@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Arithmetic Operations</title>
+</head>
+<body>
+
+    <h2>Arithmetic Operations Using Callback Functions</h2>
+
+    <button onclick="calculate(6, 3, multiply)">Multiply</button>
+    <button onclick="calculate(6, 3, divide)">Divide</button>
+    <button onclick="calculate(6, 3, remainder)">Remainder</button>
+
+    <p id="result">Result will appear here</p>
+
+    <script>
+        // Callback function to handle the calculation
+        function calculate(a, b, operation) {
+            const result = operation(a, b); // Perform the callback
+            document.getElementById('result').innerHTML = `Result: ${result}`;
+        }
+
+        // Multiplication function
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        // Division function
+        function divide(a, b) {
+            if (b === 0) {
+                return 'Cannot divide by zero';
+            }
+            return a / b;
+        }
+
+        // Remainder (modulus) function
+        function remainder(a, b) {
+            return a % b;
+        }
+    </script>
+
+</body>
+</html>
